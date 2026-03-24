@@ -152,14 +152,16 @@ export default function Home() {
         className="glass-nav fixed left-0 right-0 top-0 z-50"
       >
         <div className="flex w-full items-center justify-between px-5 py-3 md:px-8">
-          <Image
-            src="/logo.png"
-            alt="VibeCoding Academy"
-            width={100}
-            height={100}
-            className="rounded-xl"
-            priority
-          />
+          <a href="https://vibecodingacademy-programme.vercel.app" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logo.png"
+              alt="VibeCoding Academy"
+              width={100}
+              height={100}
+              className="rounded-xl"
+              priority
+            />
+          </a>
 
           <nav className="hidden items-center gap-7 text-sm font-medium text-white/50 md:flex">
             <a href="#learn"      className="transition-colors duration-200 hover:text-white">Learn</a>
