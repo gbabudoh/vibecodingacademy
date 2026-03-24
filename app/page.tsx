@@ -678,7 +678,7 @@ export default function Home() {
                 href="mailto:godwin@egobas.com"
                 className="text-cyan-400/80 transition-colors duration-200 hover:text-cyan-300"
               >
-                godwin@egobas.com
+                vibecoding@egobas.com
               </a>
               {" · "}
               <a
