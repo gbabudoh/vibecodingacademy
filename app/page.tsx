@@ -177,6 +177,57 @@ export default function Home() {
             </a>
           </motion.div>
         </motion.section>
+
+        <motion.section
+          id="cta"
+          variants={item}
+          className="mt-20 text-center mb-24 max-w-4xl mx-auto px-6"
+        >
+          <h2 className="text-3xl font-semibold">
+            Secure Your Spot in VibeCoding Academy
+          </h2>
+          <p className="mt-4 text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Join the 4-week live programme (£150) and build real web apps with
+            AI. All sessions, recordings, and community support included. Start
+            learning the right way to code with AI and deploy your first product
+            by the end of the course.
+          </p>
+          <a
+            href="https://buy.stripe.com/4gM5kDb9v7xzaFz2U14gg00"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-black transition hover:-translate-y-0.5 shadow-lg"
+          >
+            <Rocket className="h-5 w-5" />
+            Enroll Now
+          </a>
+
+          <div className="mt-10 pt-8 border-t border-white/10 text-white/50 text-sm">
+            <p className="leading-relaxed">
+              For questions, email{" "}
+              <a
+                href="mailto:godwin@egobas.com"
+                className="text-cyan-300 hover:text-cyan-200 transition underline underline-offset-4 decoration-cyan-300/30"
+              >
+                godwin@egobas.com
+              </a>{" "}
+              or call{" "}
+              <a
+                href="tel:+447814483083"
+                className="text-cyan-300 hover:text-cyan-200 transition underline underline-offset-4 decoration-cyan-300/30"
+              >
+                +44 781 448 3083
+              </a>
+              .
+              <br />
+              This is a product of{" "}
+              <strong className="text-white font-semibold">
+                Egobas Limited
+              </strong>{" "}
+              — promoting AI learning and innovation.
+            </p>
+          </div>
+        </motion.section>
       </motion.div>
     </main>
   );
