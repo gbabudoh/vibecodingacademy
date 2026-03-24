@@ -151,12 +151,12 @@ export default function Home() {
         transition={{ duration: 0.55 }}
         className="glass-nav fixed left-0 right-0 top-0 z-50"
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
+        <div className="flex w-full items-center justify-between px-5 py-3 md:px-8">
           <Image
             src="/logo.png"
             alt="VibeCoding Academy"
-            width={48}
-            height={48}
+            width={100}
+            height={100}
             className="rounded-xl"
             priority
           />
