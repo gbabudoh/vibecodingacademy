@@ -17,6 +17,10 @@ import {
   ChevronDown,
   Play,
   Layers,
+  Monitor,
+  Users,
+  Mic,
+  Video,
 } from "lucide-react";
 
 /* ── Animation variants ───────────────────────────────────────── */
@@ -112,6 +116,76 @@ const pricingFeatures = [
   "Certificate of completion",
 ];
 
+/* ── Zoom session preview component ─────────────────────────── */
+function ZoomPlaceholder() {
+  return (
+    <div className="relative w-full bg-[#1c1c1e]" style={{ aspectRatio: "16/9" }}>
+      {/* Zoom-style top bar */}
+      <div className="flex items-center justify-between bg-[#2a2a2d] px-4 py-2">
+        <div className="flex items-center gap-1.5">
+          <span className="h-3 w-3 rounded-full bg-red-500/80" />
+          <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
+          <span className="h-3 w-3 rounded-full bg-green-500/80" />
+        </div>
+        <span className="text-[11px] font-medium text-white/40">VibeCoding Academy — Live Session</span>
+        <div className="w-14" />
+      </div>
+
+      {/* Main content area */}
+      <div className="flex h-full">
+        {/* Screen share / main panel */}
+        <div className="flex flex-1 flex-col items-center justify-center bg-[#141414] p-6">
+          <Monitor className="mb-3 h-10 w-10 text-white/20" />
+          <p className="text-sm font-semibold text-white/30">Screen Share — Live Code Review</p>
+          <p className="mt-1 text-xs text-white/15">Drop your Zoom screenshot in /public/zoom-session.png</p>
+          {/* Fake code lines */}
+          <div className="mt-5 w-full max-w-xs space-y-2">
+            {[80, 60, 75, 45, 65].map((w, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className="w-5 text-right text-[10px] text-white/15">{i + 1}</span>
+                <div className="h-2 rounded-sm bg-white/[0.06]" style={{ width: `${w}%` }} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Participant tiles */}
+        <div className="hidden w-36 flex-col gap-1.5 bg-[#1c1c1e] p-2 sm:flex">
+          {["Instructor", "Student 1", "Student 2", "Student 3"].map((name, i) => (
+            <div key={name} className="relative flex flex-1 flex-col items-center justify-center rounded-lg bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500/40 to-violet-500/40 text-xs font-bold text-white/70">
+                {name[0]}
+              </div>
+              <p className="mt-1 text-[9px] text-white/35">{name}</p>
+              {i === 0 && (
+                <div className="absolute bottom-1.5 right-1.5 flex items-center gap-0.5 rounded bg-cyan-500/20 px-1 py-0.5">
+                  <Mic className="h-2 w-2 text-cyan-300" />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Zoom-style bottom toolbar */}
+      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-4 bg-gradient-to-t from-black/80 to-transparent px-4 py-3">
+        {[
+          { icon: Mic, label: "Mute" },
+          { icon: Video, label: "Stop Video" },
+          { icon: Monitor, label: "Share Screen" },
+        ].map(({ icon: Icon, label }) => (
+          <button key={label} className="flex flex-col items-center gap-0.5 opacity-60 hover:opacity-100">
+            <div className="rounded-lg bg-white/10 p-2">
+              <Icon className="h-4 w-4 text-white" />
+            </div>
+            <span className="text-[9px] text-white/50">{label}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 /* ── Page ─────────────────────────────────────────────────────── */
 export default function Home() {
   return (
@@ -199,7 +273,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
               </span>
-              Live Cohort Enrolling Now — Limited Spots
+              VibeCoding Academy — Live Training for Real Product Builders
             </div>
           </motion.div>
 
@@ -265,6 +339,38 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </motion.div>
+
+          {/* ── Zoom session preview ── */}
+          <motion.div
+            variants={fadeUp}
+            className="mt-14 w-full max-w-3xl px-0"
+          >
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_0_80px_rgba(6,182,212,0.1),0_32px_80px_rgba(0,0,0,0.7)]">
+
+              {/* Live badge */}
+              <div className="absolute left-3 top-3 z-20 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                </span>
+                Live Session
+              </div>
+
+              {/* Participant count badge */}
+              <div className="absolute right-3 top-3 z-20 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 text-xs font-medium text-white/80 backdrop-blur-sm">
+                <Users className="h-3 w-3 text-cyan-300" />
+                24 participants
+              </div>
+
+              {/* Try to load real screenshot; fallback to styled placeholder */}
+              <ZoomPlaceholder />
+            </div>
+
+            <p className="mt-3 text-center text-xs text-white/30">
+              A real VibeCoding Academy live session — replace{" "}
+              <code className="text-white/50">/public/zoom-session.png</code> with your screenshot
+            </p>
           </motion.div>
         </motion.div>
 
