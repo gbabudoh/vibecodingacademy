@@ -163,7 +163,7 @@ export default function Home() {
           >
             <h3 className="mt-3 text-5xl font-bold">£150</h3>
             <p className="mt-4 text-white/80">
-              **Full 4-week program — all live sessions, recordings, and
+              **Full 4-week programme — all live sessions, recordings, and
               community support included**
             </p>
             <a
