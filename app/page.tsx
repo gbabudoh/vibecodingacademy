@@ -50,25 +50,25 @@ const learnCards = [
     icon: Brain,
     title: "AI Product Development",
     text: "Turn ideas into real apps — design UI, direct AI tools, and ship products that actually work.",
-    gradient: "from-cyan-500/20 to-cyan-500/5",
-    accent: "text-cyan-300",
-    ring: "bg-cyan-400/15",
+    gradient: "from-cyan-500/10 to-cyan-500/5",
+    accent: "text-cyan-600",
+    ring: "bg-cyan-50",
   },
   {
     icon: Code2,
     title: "Software Engineering",
     text: "Learn GitHub, structure codebases, write clean code, and deploy your app to production.",
-    gradient: "from-violet-500/20 to-violet-500/5",
-    accent: "text-violet-300",
-    ring: "bg-violet-400/15",
+    gradient: "from-violet-500/10 to-violet-500/5",
+    accent: "text-violet-600",
+    ring: "bg-violet-50",
   },
   {
     icon: Globe,
     title: "Live Deployment",
     text: "Go from localhost to the internet. Domain setup, hosting, and real-world publishing.",
-    gradient: "from-fuchsia-500/20 to-fuchsia-500/5",
-    accent: "text-fuchsia-300",
-    ring: "bg-fuchsia-400/15",
+    gradient: "from-fuchsia-500/10 to-fuchsia-500/5",
+    accent: "text-fuchsia-600",
+    ring: "bg-fuchsia-50",
   },
 ];
 
@@ -77,25 +77,25 @@ const curriculum = [
     week: "Week 1",
     title: "AI-First Foundations",
     desc: "Tools, mindset, and your first working prototype — built entirely with AI guidance.",
-    color: "bg-cyan-500/15 border-cyan-500/25 text-cyan-300",
+    color: "bg-cyan-50 border-cyan-100 text-cyan-600",
   },
   {
     week: "Week 2",
     title: "Build Your Product",
     desc: "Structure your app, design UI/UX, and iterate fast using AI to accelerate every step.",
-    color: "bg-violet-500/15 border-violet-500/25 text-violet-300",
+    color: "bg-violet-50 border-violet-100 text-violet-600",
   },
   {
     week: "Week 3",
     title: "Engineering & Code",
     desc: "GitHub, project structure, debugging techniques, and writing clean maintainable code.",
-    color: "bg-fuchsia-500/15 border-fuchsia-500/25 text-fuchsia-300",
+    color: "bg-fuchsia-50 border-fuchsia-100 text-fuchsia-600",
   },
   {
     week: "Week 4",
     title: "Deploy & Launch",
     desc: "Hosting, domains, environment setup, and shipping your finished app live to the world.",
-    color: "bg-emerald-500/15 border-emerald-500/25 text-emerald-300",
+    color: "bg-emerald-50 border-emerald-100 text-emerald-600",
   },
 ];
 
@@ -189,32 +189,37 @@ function ZoomPlaceholder() {
 /* ── Page ─────────────────────────────────────────────────────── */
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#020510] text-white">
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
 
       {/* Background dot grid */}
-      <div className="pointer-events-none fixed inset-0 bg-grid opacity-40" aria-hidden />
+      <div className="pointer-events-none fixed inset-0 bg-grid opacity-50" aria-hidden />
 
       {/* Aurora orbs */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden" aria-hidden>
         <motion.div
-          className="absolute -left-48 -top-48 h-[40rem] w-[40rem] rounded-full bg-cyan-500/[0.11] blur-[130px]"
-          animate={{ x: [0, 90, 0], y: [0, 50, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -top-24 right-[-25%] h-[35rem] w-[35rem] rounded-full bg-violet-600/[0.11] blur-[110px]"
-          animate={{ x: [0, -70, 0], y: [0, 60, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute left-[35%] top-[55%] h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/[0.07] blur-[100px]"
-          animate={{ x: [0, -50, 0], y: [0, -40, 0] }}
+          className="absolute -left-48 -top-48 h-[50rem] w-[50rem] rounded-full bg-cyan-400/[0.06] blur-[150px]"
+          animate={{ x: [0, 110, 0], y: [0, 70, 0] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -left-20 bottom-0 h-[22rem] w-[22rem] rounded-full bg-cyan-400/[0.07] blur-[90px]"
-          animate={{ x: [0, 60, 0], y: [0, -35, 0] }}
+          className="absolute -top-32 right-[-20%] h-[45rem] w-[45rem] rounded-full bg-violet-400/[0.06] blur-[130px]"
+          animate={{ x: [0, -90, 0], y: [0, 80, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute left-[30%] top-[45%] h-[35rem] w-[35rem] rounded-full bg-fuchsia-400/[0.05] blur-[120px]"
+          animate={{ x: [0, -60, 0], y: [0, -50, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -left-20 bottom-[-10%] h-[30rem] w-[30rem] rounded-full bg-cyan-300/[0.04] blur-[110px]"
+          animate={{ x: [0, 80, 0], y: [0, -45, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute right-[10%] bottom-[15%] h-[32rem] w-[32rem] rounded-full bg-indigo-400/[0.04] blur-[115px]"
+          animate={{ x: [0, -40, 0], y: [0, 50, 0] }}
+          transition={{ duration: 21, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
@@ -228,28 +233,30 @@ export default function Home() {
         <div className="flex w-full items-center justify-between px-5 py-3 md:px-8">
           <a href="#">
             <Image
-              src="/logo.png"
+              src="/logo.png?v=2"
               alt="VibeCoding Academy"
               width={100}
               height={100}
               className="rounded-xl"
               priority
+              unoptimized
             />
           </a>
 
-          <nav className="hidden items-center gap-7 text-sm font-medium text-white/50 md:flex">
-            <a href="#"           className="transition-colors duration-200 hover:text-white">Home</a>
-            <a href="#learn"      className="transition-colors duration-200 hover:text-white">Learn</a>
-            <a href="#curriculum" className="transition-colors duration-200 hover:text-white">Curriculum</a>
-            <a href="#outcomes"   className="transition-colors duration-200 hover:text-white">Outcomes</a>
-            <a href="#pricing"    className="transition-colors duration-200 hover:text-white">Pricing</a>
+          <nav className="hidden items-center gap-7 text-sm font-medium text-slate-500 md:flex">
+            <a href="#"           className="transition-colors duration-200 hover:text-slate-900">Home</a>
+            <a href="#learn"      className="transition-colors duration-200 hover:text-slate-900">Learn</a>
+            <a href="#curriculum" className="transition-colors duration-200 hover:text-slate-900">Curriculum</a>
+            <a href="#outcomes"   className="transition-colors duration-200 hover:text-slate-900">Outcomes</a>
+            <a href="#pricing"    className="transition-colors duration-200 hover:text-slate-900">Pricing</a>
           </nav>
 
           <a
             href="https://buy.stripe.com/4gM5kDb9v7xzaFz2U14gg00"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg"
+            className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg"
+            style={{ background: "linear-gradient(90deg, #06b6d4, #7c3aed, #d946ef)" }}
           >
             <Sparkles className="h-3.5 w-3.5" />
             <span>Enroll Now</span>
@@ -269,12 +276,12 @@ export default function Home() {
         >
           {/* Live badge */}
           <motion.div variants={fadeUp} className="mb-7">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/25 bg-cyan-400/[0.08] px-4 py-2 text-xs font-semibold text-cyan-200 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-xs font-semibold text-cyan-600 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
               </span>
-              VibeCoding Academy — Live Training for Real Product Builders
+              VibeCoding - Live Training for Real Product Builders
             </div>
           </motion.div>
 
@@ -291,7 +298,7 @@ export default function Home() {
           {/* Subheadline */}
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/55 md:text-lg"
+            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-slate-500 md:text-lg"
           >
             A 4-week live programme where you go from idea to a deployed
             product — using AI tools the right way, with real engineering skills.
@@ -306,15 +313,16 @@ export default function Home() {
               href="https://buy.stripe.com/4gM5kDb9v7xzaFz2U14gg00"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white sm:w-auto"
+              style={{ background: "linear-gradient(90deg, #06b6d4, #7c3aed, #d946ef)" }}
             >
               <Rocket className="h-5 w-5" />
               Join the Next Cohort
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#curriculum"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/[0.12] bg-white/[0.04] px-7 py-4 text-base font-medium text-white/75 backdrop-blur-sm transition-all duration-200 hover:bg-white/[0.09] hover:text-white sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-7 py-4 text-base font-medium text-slate-600 backdrop-blur-sm transition-all duration-200 hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
             >
               <Play className="h-4 w-4" />
               See Curriculum
@@ -335,8 +343,8 @@ export default function Home() {
                   <Icon className="h-4 w-4 text-cyan-300" />
                 </div>
                 <div className="text-left">
-                  <p className="text-lg font-bold leading-none">{value}</p>
-                  <p className="mt-0.5 text-xs text-white/45">{label}</p>
+                  <p className="text-lg font-bold leading-none text-slate-900">{value}</p>
+                  <p className="mt-0.5 text-xs text-slate-400">{label}</p>
                 </div>
               </div>
             ))}
@@ -368,9 +376,9 @@ export default function Home() {
               <ZoomPlaceholder />
             </div>
 
-            <p className="mt-3 text-center text-xs text-white/30">
+            <p className="mt-3 text-center text-xs text-slate-400">
               A real VibeCoding Academy live session — replace{" "}
-              <code className="text-white/50">/public/zoom-session.png</code> with your screenshot
+              <code className="text-slate-600 font-mono">/public/zoom-session.png</code> with your screenshot
             </p>
           </motion.div>
         </motion.div>
@@ -399,8 +407,8 @@ export default function Home() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">
               Curriculum Overview
             </p>
-            <h2 className="text-3xl font-bold md:text-4xl">What You&apos;ll Learn</h2>
-            <p className="mx-auto mt-4 max-w-md text-sm text-white/45 md:text-base">
+            <h2 className="text-3xl font-bold md:text-4xl text-slate-900">What You&apos;ll Learn</h2>
+            <p className="mx-auto mt-4 max-w-md text-sm text-slate-500 md:text-base">
               Three core pillars designed to take you from zero to production-ready.
             </p>
           </motion.div>
@@ -422,8 +430,8 @@ export default function Home() {
                 <div className={`relative mb-5 inline-flex rounded-xl ${ring} p-3 ${accent}`}>
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="relative text-lg font-bold">{title}</h3>
-                <p className="relative mt-2 text-sm leading-relaxed text-white/50">{text}</p>
+                <h3 className="relative text-lg font-bold text-slate-900">{title}</h3>
+                <p className="relative mt-2 text-sm leading-relaxed text-slate-500">{text}</p>
               </motion.article>
             ))}
           </div>
@@ -445,7 +453,7 @@ export default function Home() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-violet-400">
               Programme Structure
             </p>
-            <h2 className="text-3xl font-bold md:text-4xl">
+            <h2 className="text-3xl font-bold md:text-4xl text-slate-900">
               4 Weeks.{" "}
               <span className="text-gradient">Real Results.</span>
             </h2>
@@ -466,7 +474,7 @@ export default function Home() {
               >
                 {/* Node bubble */}
                 <div className="glass-card relative z-10 hidden h-14 w-14 flex-shrink-0 items-center justify-center rounded-full md:flex">
-                  <span className="text-sm font-bold text-white/60">{i + 1}</span>
+                  <span className="text-sm font-bold text-slate-400">{i + 1}</span>
                 </div>
 
                 <div className="glass-card glow-hover flex-1 rounded-2xl px-6 py-5">
@@ -475,8 +483,8 @@ export default function Home() {
                       {week}
                     </span>
                   </div>
-                  <h3 className="text-base font-bold">{title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-white/50">{desc}</p>
+                  <h3 className="text-base font-bold text-slate-900">{title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -499,7 +507,7 @@ export default function Home() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald-400">
               What You Leave With
             </p>
-            <h2 className="text-3xl font-bold md:text-4xl">What You&apos;ll Achieve</h2>
+            <h2 className="text-3xl font-bold md:text-4xl text-slate-900">What You&apos;ll Achieve</h2>
           </motion.div>
 
           <motion.div
@@ -517,10 +525,10 @@ export default function Home() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3.5"
+                  className="flex items-center gap-3 rounded-xl border border-slate-100 bg-white/50 px-4 py-3.5"
                 >
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-400" />
-                  <span className="text-sm text-white/75">{outcome}</span>
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
+                  <span className="text-sm text-slate-600 font-medium">{outcome}</span>
                 </motion.div>
               ))}
             </div>
@@ -543,8 +551,8 @@ export default function Home() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-fuchsia-400">
               Investment
             </p>
-            <h2 className="text-3xl font-bold md:text-4xl">Simple, Clear Pricing</h2>
-            <p className="mx-auto mt-4 max-w-sm text-sm text-white/45">
+            <h2 className="text-3xl font-bold md:text-4xl text-slate-900">Simple, Clear Pricing</h2>
+            <p className="mx-auto mt-4 max-w-sm text-sm text-slate-400">
               One payment. Everything included. No surprises.
             </p>
           </motion.div>
@@ -567,15 +575,15 @@ export default function Home() {
               </div>
 
               <div className="mt-6 flex items-end justify-center gap-1">
-                <span className="mb-2.5 text-2xl font-semibold text-white/40">£</span>
-                <span className="text-[5.5rem] font-black leading-none tracking-tighter">150</span>
+                <span className="mb-2.5 text-2xl font-semibold text-slate-300">£</span>
+                <span className="text-[5.5rem] font-black leading-none tracking-tighter text-slate-900">150</span>
               </div>
-              <p className="mt-1 text-sm text-white/40">one-time payment</p>
+              <p className="mt-1 text-sm text-slate-400">one-time payment</p>
 
               <ul className="mt-8 space-y-3 text-left">
                 {pricingFeatures.map((feat) => (
-                  <li key={feat} className="flex items-center gap-3 text-sm text-white/70">
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-400" />
+                  <li key={feat} className="flex items-center gap-3 text-sm text-slate-600 font-medium">
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
                     {feat}
                   </li>
                 ))}
@@ -585,14 +593,15 @@ export default function Home() {
                 href="https://buy.stripe.com/4gM5kDb9v7xzaFz2U14gg00"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white"
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white"
+                style={{ background: "linear-gradient(90deg, #06b6d4, #7c3aed, #d946ef)" }}
               >
                 <Sparkles className="h-5 w-5" />
                 Enroll Now — £150
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4" />
               </a>
 
-              <p className="mt-4 text-xs text-white/25">
+              <p className="mt-4 text-xs text-slate-400">
                 Secure checkout via Stripe · Instant confirmation
               </p>
             </div>
@@ -621,12 +630,12 @@ export default function Home() {
               Your first app is waiting to be built
             </div>
 
-            <h2 className="text-[clamp(2rem,6vw,3.75rem)] font-black leading-tight tracking-tight">
+            <h2 className="text-[clamp(2rem,6vw,3.75rem)] font-black leading-tight tracking-tight text-slate-900">
               Stop learning.{" "}
               <span className="text-gradient">Start shipping.</span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/50 md:text-lg">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-500 md:text-lg">
               Don&apos;t just learn prompts. Learn to build. Join a live cohort,
               ship a real product, and leave with skills that actually matter.
             </p>
@@ -636,15 +645,16 @@ export default function Home() {
                 href="https://buy.stripe.com/4gM5kDb9v7xzaFz2U14gg00"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary group inline-flex w-full items-center justify-center gap-2 rounded-2xl px-9 py-4 text-base font-semibold text-white sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-9 py-4 text-base font-semibold text-white sm:w-auto"
+                style={{ background: "linear-gradient(90deg, #06b6d4, #7c3aed, #d946ef)" }}
               >
                 <Rocket className="h-5 w-5" />
                 Start Building Today
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4" />
               </a>
               <a
                 href="#pricing"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/[0.12] bg-white/[0.04] px-7 py-4 text-base font-medium text-white/70 backdrop-blur-sm transition-all duration-200 hover:bg-white/[0.09] hover:text-white sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-7 py-4 text-base font-medium text-slate-600 backdrop-blur-sm transition-all duration-200 hover:bg-slate-50 hover:text-slate-900 sm:w-auto"
               >
                 View Pricing
               </a>
@@ -656,39 +666,40 @@ export default function Home() {
       {/* ════════════════════════════════════════════════
           FOOTER
       ════════════════════════════════════════════════ */}
-      <footer className="relative z-10 border-t border-white/[0.07] px-5 py-10 md:px-8">
+      <footer className="relative z-10 border-t border-slate-100 px-5 py-10 md:px-8">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/logo.png?v=2"
               alt="VibeCoding Academy"
               width={42}
               height={42}
               className="rounded-xl"
+              unoptimized
             />
             <div>
-              <p className="text-sm font-semibold">VibeCoding Academy</p>
-              <p className="text-xs text-white/35">A product of Egobas Limited</p>
+              <p className="text-sm font-semibold text-slate-900">VibeCoding Academy</p>
+              <p className="text-xs text-slate-400">A product of Egobas Limited</p>
             </div>
           </div>
 
-          <div className="text-center text-sm text-white/35 md:text-right">
+          <div className="text-center text-sm text-slate-400 md:text-right">
             <p>
               <a
                 href="mailto:godwin@egobas.com"
-                className="text-cyan-400/80 transition-colors duration-200 hover:text-cyan-300"
+                className="text-cyan-600/80 transition-colors duration-200 hover:text-cyan-500"
               >
                 vibecoding@egobas.com
               </a>
               {" · "}
               <a
                 href="tel:+447814483083"
-                className="text-cyan-400/80 transition-colors duration-200 hover:text-cyan-300"
+                className="text-cyan-600/80 transition-colors duration-200 hover:text-cyan-500"
               >
                 +44 781 448 3083
               </a>
             </p>
-            <p className="mt-1.5 text-xs text-white/25">
+            <p className="mt-1.5 text-xs text-slate-300">
               © {new Date().getFullYear()} Egobas Limited. All rights reserved.
             </p>
           </div>
